@@ -81,3 +81,23 @@ body {
 text-decoration: none;
 background-color: #eee;
 }
+
+#analyser_form{
+  margin-bottom: 50px;
+}
+#analyser_form > textarea{
+  margin: 5px;
+  max-width: 98%;
+}
+#analyser_form > button{
+  margin: 0 5px;
+}
+
+#analyser_pannel{
+  min-height: 188px;
+}
+
+.panel-default {
+  border-color: #ddd;
+  min-height: 312px;
+}
