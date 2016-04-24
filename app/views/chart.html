@@ -1,69 +1,30 @@
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Charts</h1>
+        <h1 class="page-header"> Words stats</h1>
     </div>
     <!-- /.col-lg-12 -->
 </div>
 <div class="row">
-    <div class="col-lg-6 col-sm-12" id="line-chart" ng-controller="ChartCtrl">
-        <div class="panel panel-default">
-            <div class="panel-heading">Line Chart</div>
-            <div class="panel-body">
-                <canvas id="line" class="chart chart-line chart-xl" data="line.data" labels="line.labels" legend="true"
-                click="line.onClick" series="line.series"></canvas>
-            </div>
+    <div class="col-lg-6 col-sm-12">
+        <div class="panel panel-default chart-container" id="analyser_pannel">
+            <div class="panel-heading">Enter your text to analyse</div>
+            <form role="form" class="ng-pristine ng-valid">
+                <div class="form-group" id="analyser_form">
+                        <textarea ng-model="textToAnalyse"  ng-minlength="3" class="form-control" rows="10" placeholder="Your text here..." required></textarea>
+                        <button ng-click="analyseText()" class="btn btn-primary btn-space glyphicon glyphicon-ok pull-right">Analyse!</button>
+                </div>
+            </form>
         </div>
     </div>
-    <div class="col-lg-6 col-sm-12" id="bar-chart" ng-controller="ChartCtrl">
+
+    <div class="col-lg-6 col-sm-12" id="bar-chart" ng-controller="ChartCtrl" ng-init="init()">
         <div class="panel panel-default">
-            <div class="panel-heading">Bar Chart</div>
+            <div class="panel-heading">Words frequency</div>
             <div class="panel-body">
+                <div ng-if="!wordStats" class="alert alert-warning">No data provided yet...</div>
                 <canvas id="bar" class="chart chart-bar" data="bar.data" labels="bar.labels" series="bar.series"
-                options="bar.options"></canvas>
+                options="bar.options" ></canvas>
             </div>
         </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-6 col-sm-12" id="doughnut-chart" ng-controller="ChartCtrl">
-        <div class="panel panel-default">
-            <div class="panel-heading">Doughnut Chart</div>
-            <div class="panel-body">
-            <canvas id="doughnut" class="chart chart-doughnut chart-xs" data="donut.data" labels="donut.labels" legend="false"></canvas>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-6 col-sm-12" id="radar-chart" ng-controller="ChartCtrl">
-        <div class="panel panel-default">
-            <div class="panel-heading">Radar Chart</div>
-            <div class="panel-body">
-                <canvas id="area" class="chart chart-radar" data="radar.data" labels="radar.labels" click="onClick"></canvas>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-6 col-sm-12" id="pie-chart" ng-controller="ChartCtrl">
-        <div class="panel panel-default">
-            <div class="panel-heading">Pie Chart</div>
-            <div class="panel-body">
-                <canvas id="pie" class="chart chart-pie chart-xs" data="pie.data" labels="pie.labels"></canvas>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-6 col-sm-12" id="polar area-chart" ng-controller="ChartCtrl">
-      <div class="panel panel-default">
-        <div class="panel-heading">Polar Area Chart</div>
-        <div class="panel-body">
-          <canvas id="polar" class="chart chart-polar-area" data="polar.data" labels="polar.labels"></canvas>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6 col-sm-12" id="base-chart" ng-controller="ChartCtrl">
-        <div class="panel panel-default">
-            <div class="panel-heading">Dynamic Chart</div>
-            <div class="panel-body">
-            <canvas id="base" class="chart chart-base" chart-type="dynamic.type" data="dynamic.data" labels="dynamic.labels" legend="true"></canvas>
-            </div>
-        </div>
-        <button type="button" class="btn btn-primary pull-right" ng-click="dynamic.toggle()">Toggle</button>
     </div>
 </div>
