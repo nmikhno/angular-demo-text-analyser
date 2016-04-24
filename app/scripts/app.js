@@ -115,12 +115,16 @@ angular
               name:'chart.js',
               files:[
                 'bower_components/angular-chart.js/dist/angular-chart.min.js',
-                'bower_components/angular-chart.js/dist/angular-chart.css'
+                'bower_components/angular-chart.js/dist/angular-chart.css',
+                'bower_components/lodash/dist/lodash.core.min.js'
               ]
             }),
             $ocLazyLoad.load({
                 name:'sbAdminApp',
-                files:['scripts/controllers/chartContoller.js']
+                files:[
+                    'scripts/services/text-anlyser.js',
+                    'scripts/controllers/chartContoller.js'
+                ]
             })
           }
         }
@@ -154,5 +158,8 @@ angular
        url:'/grid'
    })
   }]);
+
+
+
 
     
