@@ -81,7 +81,12 @@ body {
 text-decoration: none;
 background-color: #eee;
 }
-
+/*
+  It could be possible to include this styles
+  with lazyLoad immediately for charts controller
+  but as long as there are few of them
+  I beleive it is not critical to live them here
+*/
 #analyser_form{
   margin-bottom: 50px;
 }
